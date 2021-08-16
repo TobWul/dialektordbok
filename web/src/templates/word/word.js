@@ -13,9 +13,7 @@ const WordPage = ({
     <div>
       <Word word={word} />
       <Meaning meaning={meaning} />
-      <div>
-        <Badge>{wordClass.name}</Badge>
-      </div>
+      <div>{wordClass && <Badge>{wordClass.name}</Badge>}</div>
     </div>
   )
 }
