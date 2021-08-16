@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create pages for each markdown file.
-  const wordTemplate = path.resolve("./src/templates/word/word.js")
+  const wordTemplate = path.resolve("./src/templates/wordPage/wordPage.js")
 
   console.log("\n\n--------- Generating pages ---------")
 

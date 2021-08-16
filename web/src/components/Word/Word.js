@@ -1,5 +1,6 @@
 import React from "react"
 import BlockContent from "@sanity/block-content-to-react"
+import * as styles from "./Word.module.scss"
 
 const serializers = {
   types: {
@@ -12,7 +13,11 @@ const serializers = {
 }
 
 const Word = ({ word }) => {
-  return <BlockContent blocks={word} serializers={serializers} />
+  return (
+    <div className={styles.word}>
+      <BlockContent blocks={word} serializers={serializers} />
+    </div>
+  )
 }
 
 export default Word

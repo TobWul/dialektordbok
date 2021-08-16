@@ -2,14 +2,19 @@ require("dotenv").config()
 
 const environment = process.env.NODE_ENV || "development"
 
-const siteUrl = "https://dialektordbok.gatsbyjs.io/"
+const options = {
+  name: "Dialektordbok",
+  description: `Nettbasert ordbok for dialekter i Norge`,
+  siteUrl: "https://dialektordbok.gatsbyjs.io/",
+  author: "tobias@umble.no",
+}
 
 module.exports = {
   siteMetadata: {
-    title: `Dialektordbok`,
-    description: `Nettbasert ordbok for dialekter i Norge`,
-    author: `@tobiaswulvik`,
-    siteUrl,
+    title: options.name,
+    description: options.description,
+    author: options.author,
+    siteUrl: options.siteUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: options.name,
+        short_name: options.name,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -48,8 +53,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: siteUrl,
-        sitemap: siteUrl + "/sitemap.xml",
+        host: options.siteUrl,
+        sitemap: options.siteUrl + "/sitemap.xml",
         env: {
           development: {
             policy: [{ userAgent: "*", disallow: ["/"] }],
@@ -63,11 +68,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-plausible`,
       options: {
-        domain: siteUrl,
+        domain: options.siteUrl,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -1,3 +1,5 @@
+const cn = (...classes) => classes.join(" ")
+
 const blockToPlainText = (blocks = []) =>
   blocks
     // loop through each block
@@ -63,6 +65,7 @@ const slugify = (string, options = { lower: true }) => {
 }
 
 module.exports = {
+  cn,
   slugify,
   blockToPlainText,
 }

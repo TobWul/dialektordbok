@@ -1,0 +1,21 @@
+@import "./variables";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Domine", serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
