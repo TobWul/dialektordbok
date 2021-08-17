@@ -3,7 +3,7 @@ import React from "react"
 import Badge from "../../components/Badge/Badge"
 import Meaning from "../../components/Meaning/Meaning"
 import Word from "../../components/Word/Word"
-import { Heading3 } from "../../components/Typography/Typography"
+import { Body1, Heading3 } from "../../components/Typography/Typography"
 import * as styles from "./wordPage.module.scss"
 import { Helmet } from "react-helmet"
 import SEO from "../../components/SEO"
@@ -36,17 +36,24 @@ const WordPage = ({
             : []
         }
       />
-      <Heading3>
-        <Word word={word} />
-      </Heading3>
-      <div>
-        <Badge>{wordClass?.name}</Badge>
+      <div className={styles.wordInfo}>
+        <div className={styles.innerWrapper}>
+          <Heading3>
+            <Word word={word} />
+          </Heading3>
+          <Meaning meaning={meaning} />
+          <div className={styles.wordClasses}>
+            <Badge>{wordClass?.name}</Badge>
+          </div>
+        </div>
       </div>
-      <Meaning meaning={meaning} />
       <div className={styles.relevantContent}>
-        {sentences.map(({ node: sentence }) => (
-          <p>{sentence.text}</p>
-        ))}
+        <div className={styles.innerWrapper}>
+          <Body1 bold>Uttrykk:</Body1>
+          {sentences.map(({ node: sentence }) => (
+            <p>{sentence.text}</p>
+          ))}
+        </div>
       </div>
     </div>
   )

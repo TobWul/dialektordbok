@@ -1,8 +1,9 @@
 import React from "react"
+import { Caption } from "../Typography/Typography"
 import * as styles from "./Badge.module.scss"
 
 const Badge = ({ children }) => {
-  return <div className={styles.badge}>{children}</div>
+  return <Caption className={styles.badge}>{children}</Caption>
 }
 
 export default Badge

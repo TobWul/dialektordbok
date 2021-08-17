@@ -2,5 +2,19 @@
   background-color: var(--color-gray-50);
 }
 
+.wordInfo {
+  background-color: var(--color-gray-white);
+  padding: 8% var(--page-horizontal-padding) 1rem;
+}
+.innerWrapper {
+  margin: 0 auto;
+  max-width: var(--max-page-width);
+}
+
 .relevantContent {
+  padding: 2rem var(--page-horizontal-padding);
+}
+
+.wordClasses {
+  margin-top: 3rem;
 }

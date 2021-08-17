@@ -5,13 +5,14 @@ import { cn } from "../../lib/helpers"
 import * as styles from "./Typography.module.scss"
 
 const withTypographyProps = Component => props => {
-  const { className, align, uppercase } = props
+  const { className, align, uppercase, bold } = props
   return (
     <Component
       {...props}
       className={cn(
         className,
         align ? styles[`align-${align}`] : "",
+        bold ? styles.bold : "",
         uppercase ? styles.uppercase : ""
       )}
     />
