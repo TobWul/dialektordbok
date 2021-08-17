@@ -6,8 +6,8 @@ import Word from "../../components/Word/Word"
 import { Body1, Heading3 } from "../../components/Typography/Typography"
 import * as styles from "./wordPage.module.scss"
 import { Helmet } from "react-helmet"
-import SEO from "../../components/seo"
 import { blockToPlainText } from "../../lib/helpers"
+import SEO from "../../seo"
 
 const WordPage = ({
   data: {
