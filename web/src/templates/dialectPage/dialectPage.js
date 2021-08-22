@@ -49,6 +49,7 @@ const DialectPage = ({
     }).then(res => {
       setUploadedWords([userData.word, ...uploadedWords]);
       setUserData({});
+      setSimilarWords([]);
       inputRef?.current?.focus();
       return res.json();
     });
@@ -77,7 +78,17 @@ const DialectPage = ({
           label="Betydning"
           description="Si gjerne hva det betyr om du kan."
         />
-        <Button type="submit">Send inn</Button>
+        <Body1>
+          {userData.word} ligner på:{" "}
+          {similarWords.map(({ word }) => word + ", ")}
+        </Body1>
+        {similarWords.length > 0 ? (
+          <Button type="button" onClick={uploadWord}>
+            Last opp likevel
+          </Button>
+        ) : (
+          <Button type="submit">Send inn</Button>
+        )}
       </form>
       <div className={styles.uploadedWords}>
         <Body2>Innsendte ord:</Body2>
