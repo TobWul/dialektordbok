@@ -1,0 +1,28 @@
+.inputContainer {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.label {
+}
+.input {
+  background-color: var(--color-gray-50);
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  resize: vertical;
+  &::placeholder {
+    color: var(--color-gray-500);
+  }
+}
+textarea.input {
+  min-height: 2rem;
+}
+
+.description {
+  color: var(--color-gray-600);
+  margin-top: 4px;
+}

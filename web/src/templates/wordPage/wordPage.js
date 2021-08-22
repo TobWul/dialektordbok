@@ -1,13 +1,13 @@
-import { graphql } from "gatsby"
-import React from "react"
-import Badge from "../../components/Badge/Badge"
-import Meaning from "../../components/Meaning/Meaning"
-import Word from "../../components/Word/Word"
-import { Body1, Heading3 } from "../../components/Typography/Typography"
-import * as styles from "./wordPage.module.scss"
-import { Helmet } from "react-helmet"
-import { blockToPlainText } from "../../lib/helpers"
-import SEO from "../../seo"
+import { graphql } from "gatsby";
+import React from "react";
+import Badge from "../../components/Badge/Badge";
+import Meaning from "../../components/Meaning/Meaning";
+import Word from "../../components/Word/Word";
+import { Body1, Heading3 } from "../../components/Typography/Typography";
+import * as styles from "./wordPage.module.scss";
+import { Helmet } from "react-helmet";
+import { blockToPlainText } from "../../lib/helpers";
+import SEO from "../../seo";
 
 const WordPage = ({
   data: {
@@ -15,6 +15,9 @@ const WordPage = ({
     allSanitySentence: { edges: sentences },
   },
 }) => {
+  console.log(word);
+  console.log(meaning);
+  console.log(dialects);
   return (
     <div>
       <Helmet
@@ -56,8 +59,8 @@ const WordPage = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query Word($id: String) {
@@ -81,6 +84,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default WordPage
+export default WordPage;

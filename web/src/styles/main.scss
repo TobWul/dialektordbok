@@ -8,7 +8,7 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: 112.5%;
 }
 
 body {
@@ -19,4 +19,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-white);
 }
