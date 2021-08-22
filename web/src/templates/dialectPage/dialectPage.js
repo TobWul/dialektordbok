@@ -78,14 +78,16 @@ const DialectPage = ({
           label="Betydning"
           description="Si gjerne hva det betyr om du kan."
         />
-        <Body1>
-          {userData.word} ligner på:{" "}
-          {similarWords.map(({ word }) => word + ", ")}
-        </Body1>
         {similarWords.length > 0 ? (
-          <Button type="button" onClick={uploadWord}>
-            Last opp likevel
-          </Button>
+          <>
+            <Body1>
+              {userData.word} ligner på:{" "}
+              {similarWords.map(({ word }) => word + ", ")}
+            </Body1>
+            <Button type="button" onClick={uploadWord}>
+              Last opp likevel
+            </Button>
+          </>
         ) : (
           <Button type="submit">Send inn</Button>
         )}
