@@ -22,5 +22,11 @@ export default {
       title: "Ord i setningen / uttrykket",
       of: [{ type: "reference", to: [{ type: "word" }] }],
     },
+    {
+      name: "dialects",
+      type: "array",
+      title: "Tilhører i dialektene:",
+      of: [{ type: "reference", to: [{ type: "dialect" }] }],
+    },
   ],
 };
