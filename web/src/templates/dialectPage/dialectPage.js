@@ -35,7 +35,6 @@ const DialectPage = ({
       ({ similarity }) => similarity > 0.5
     );
     setSimilarWords(similarWordsFilter);
-    console.log(similarWordsFilter);
     if (similarWordsFilter.length === 0) uploadWord();
   }
   async function uploadWord() {

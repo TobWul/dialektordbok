@@ -15,9 +15,6 @@ const WordPage = ({
     allSanitySentence: { edges: sentences },
   },
 }) => {
-  console.log(word);
-  console.log(meaning);
-  console.log(dialects);
   return (
     <div>
       <Helmet

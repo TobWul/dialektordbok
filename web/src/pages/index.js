@@ -1,7 +1,7 @@
 import * as React from "react";
 import SearchField from "../components/SearchField/SearchField";
-import { graphql, useStaticQuery } from "gatsby";
-import { blockToPlainText } from "../lib/helpers";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import { blockToPlainText, slugify } from "../lib/helpers";
 import { Body1, Caption } from "../components/Typography/Typography";
 import doubleMetaphone from "talisman/phonetics/double-metaphone";
 
@@ -31,8 +31,10 @@ const IndexPage = () => {
       <ul>
         {allWords.map(({ value: word, metaphone }) => (
           <li>
-            <Body1>{word}</Body1>
-            <Caption>{metaphone}</Caption>
+            <Link to={slugify(word)}>
+              <Body1>{word}</Body1>
+              <Caption>{metaphone}</Caption>
+            </Link>
           </li>
         ))}
       </ul>

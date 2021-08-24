@@ -21,6 +21,10 @@ body {
   padding: 0;
 }
 
+a {
+  color: var(--color-link);
+}
+
 ::selection {
   background-color: var(--color-gray-900);
   color: var(--color-gray-white);
