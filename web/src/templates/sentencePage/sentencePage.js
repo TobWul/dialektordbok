@@ -11,6 +11,7 @@ const SentencePage = ({
     sanitySentence: { text, meaning, dialects, words },
   },
 }) => {
+  console.log(words);
   return (
     <div>
       <Helmet
@@ -23,7 +24,7 @@ const SentencePage = ({
         description={meaning}
         meta={{
           property: "keywords",
-          content: words.map(word => blockToPlainText(word.word)).join(", "),
+          content: words.map(({ word }) => blockToPlainText(word)).join(", "),
         }}
       />
       <div className={styles.sentenceTop}>
@@ -35,8 +36,8 @@ const SentencePage = ({
       <div className={styles.relevantContent}>
         <div className={styles.innerWrapper}>
           <Body1 bold>Uttrykk:</Body1>
-          {words.map(word => (
-            <Body1>{word}</Body1>
+          {words.map(({ word }) => (
+            <Body1>{blockToPlainText(word)}</Body1>
           ))}
         </div>
       </div>
