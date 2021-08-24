@@ -26,7 +26,8 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "sass": "^1.37.5",
-    "slugify": "^1.6.0"
+    "slugify": "^1.6.0",
+    "talisman": "^1.1.4"
   },
   "devDependencies": {
     "prettier": "2.3.2"

@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-const { makeId } = require("./apiUtils");
+const { makeId } = require("../lib/helpers");
 
 const generateNewWordStructure = (word, meaning, dialectID) => ({
   _type: "word",
