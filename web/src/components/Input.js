@@ -2,7 +2,17 @@ import React, { forwardRef } from "react";
 import Icon from "./icons/Icon";
 
 const Input = forwardRef(
-  ({ id, name, onChange, value, label, type, description, ...props }) => {
+  ({
+    id,
+    name,
+    onChange,
+    value,
+    label,
+    type,
+    description,
+    white,
+    ...props
+  }) => {
     const inputProps = {
       id,
       name,
@@ -11,8 +21,11 @@ const Input = forwardRef(
       placeholder: label,
       ...props,
     };
+    const backgroundColor = " " + white ? "bg-white" : "bg-gray-100";
     const inputClasses =
-      "bg-gray-100 w-full py-3 px-3 font-serif text-base rounded resize-y placeholder-gray-500 focus:outline-none";
+      "w-full py-3 px-3 font-serif text-base rounded resize-y placeholder-gray-500 focus:outline-none" +
+      backgroundColor;
+
     return (
       <div className="w-full mb-4">
         <label htmlFor={name} className="text-body-2">

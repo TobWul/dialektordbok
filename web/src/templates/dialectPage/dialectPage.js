@@ -17,7 +17,7 @@ const DialectDictionary = ({
   }));
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-page mx-auto">
       <h1 className="text-heading-3">{name}</h1>
       {alphabeticalDictionary
         .filter(({ words }) => words.length > 0)

@@ -6,6 +6,7 @@ import Icon from "../../components/icons/Icon";
 import Input from "../../components/Input";
 import { blockToPlainText, stringSimilarity } from "../../lib/helpers";
 import * as styles from "./dialectPage.module.scss";
+import Helmet from "react-helmet";
 
 const DialectPage = ({
   pageContext: { name, dialectID },
@@ -54,6 +55,7 @@ const DialectPage = ({
   }
   return (
     <div className="max-w-2xl mx-auto py-16">
+      <Helmet bodyAttributes={{ class: "bg-gray-100" }} />
       <p className="text-body-1">Legg inn ord i ordboka for</p>
       <h2 className="text-heading-4">{name}</h2>
       <br />
