@@ -49,7 +49,7 @@ const WordPage = ({
       </div>
       <div className="py-8 px-page">
         <div className="mx-auto max-w-page">
-          <p className="text-body-1 bold">Uttrykk:</p>
+          {sentences.length > 0 && <p className="text-body-1 bold">Uttrykk:</p>}
           {sentences.map(({ node: sentence }) => (
             <p>{sentence.text}</p>
           ))}
