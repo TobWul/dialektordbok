@@ -7,7 +7,7 @@ function whichIcon(icon) {
   }
 }
 
-function Icon({ icon, fill, size, color, viewBox }) {
+function Icon({ icon, fill, size, color, viewBox, className }) {
   const iconStyle = {
     width: size,
     height: size,
@@ -19,6 +19,7 @@ function Icon({ icon, fill, size, color, viewBox }) {
       viewBox={viewBox || "0 0 24 24"}
       fill={fill ? color : "none"}
       style={iconStyle}
+      className={className}
       {...iconStyle}
     >
       {whichIcon(icon)}

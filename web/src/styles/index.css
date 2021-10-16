@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::after,
+  *::before {
+    @apply box-border;
+  }
+  html {
+    @apply font-serif;
+  }
+}
+@layer components {
+  @variants responsive {
+    .text-heading-1 {
+      @apply text-7xl leading-snug;
+    }
+    .text-heading-2 {
+      @apply text-6xl leading-snug;
+    }
+    .text-heading-3 {
+      @apply text-5xl leading-snug;
+    }
+    .text-heading-4 {
+      @apply text-4xl leading-snug;
+    }
+    .text-body-1 {
+      @apply text-base;
+    }
+    .text-body-2 {
+      @apply text-sm;
+    }
+    .text-caption {
+      @apply text-xs;
+    }
+    .text-overline {
+      @apply text-xs uppercase font-bold;
+    }
+  }
+}

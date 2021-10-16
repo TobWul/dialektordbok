@@ -58,6 +58,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const sentenceTemplate = path.resolve(
     "./src/templates/sentencePage/sentencePage.js"
   );
+  const dialectUploadTemplate = path.resolve(
+    "./src/templates/dialectPage/dialectUploadPage.js"
+  );
   const dialectTemplate = path.resolve(
     "./src/templates/dialectPage/dialectPage.js"
   );
@@ -88,6 +91,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   dialectEdges.forEach(({ node: dialect }) => {
     const path = "/" + slugify(dialect.name);
     printPage(path);
+    createPage({
+      path: path + "/legg-inn",
+      component: dialectUploadTemplate,
+      context: { dialectID: dialect._id, name: dialect.name },
+    });
     createPage({
       path,
       component: dialectTemplate,

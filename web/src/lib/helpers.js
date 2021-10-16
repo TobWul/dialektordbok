@@ -104,10 +104,14 @@ function makeId(length) {
   return result;
 }
 
+function sortAlphabetically(a, b) {
+  return a > b ? 1 : a < b ? -1 : 0;
+}
 module.exports = {
   cn,
   slugify,
   blockToPlainText,
   stringSimilarity,
-  makeId
+  makeId,
+  sortAlphabetically,
 };

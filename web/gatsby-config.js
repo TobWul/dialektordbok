@@ -1,13 +1,13 @@
-require("dotenv").config()
+require("dotenv").config();
 
-const environment = process.env.NODE_ENV || "development"
+const environment = process.env.NODE_ENV || "development";
 
 const options = {
   name: "Dialektordbok",
   description: `Nettbasert ordbok for dialekter i Norge`,
   siteUrl: "https://dialektordbok.gatsbyjs.io/",
   author: "tobias@umble.no",
-}
+};
 
 module.exports = {
   siteMetadata: {
@@ -34,8 +34,8 @@ module.exports = {
         name: options.name,
         short_name: options.name,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -73,9 +73,11 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sass`,
+    "gatsby-plugin-sass",
+    "gatsby-plugin-postcss", // TODO: Remove
+    `gatsby-plugin-use-query-params`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

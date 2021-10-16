@@ -1,11 +1,9 @@
 import { graphql } from "gatsby";
 import React from "react";
-import Badge from "../../components/Badge/Badge";
-import Meaning from "../../components/Meaning/Meaning";
-import Word from "../../components/Word/Word";
-import { Body1, Heading3 } from "../../components/Typography/Typography";
-import * as styles from "./wordPage.module.scss";
 import { Helmet } from "react-helmet";
+import Badge from "../../components/Badge";
+import Meaning from "../../components/Meaning";
+import Word from "../../components/Word/Word";
 import { blockToPlainText } from "../../lib/helpers";
 import SEO from "../../seo";
 
@@ -19,7 +17,7 @@ const WordPage = ({
     <div>
       <Helmet
         bodyAttributes={{
-          class: styles.wordBody,
+          class: "bg-gray-100",
         }}
       />
       <SEO
@@ -36,20 +34,22 @@ const WordPage = ({
             : []
         }
       />
-      <div className={styles.wordInfo}>
-        <div className={styles.innerWrapper}>
-          <Heading3>
+      <div className="bg-white px-page">
+        <div className="mx-auto max-w-page pt-24 pb-16">
+          <h1 className="text-heading-3">
             <Word word={word} />
-          </Heading3>
+          </h1>
           <Meaning meaning={meaning} />
-          <div className={styles.wordClasses}>
-            <Badge>{wordClass?.name}</Badge>
-          </div>
+          {wordClass && (
+            <div className="mt-12">
+              <Badge>{wordClass?.name}</Badge>
+            </div>
+          )}
         </div>
       </div>
-      <div className={styles.relevantContent}>
-        <div className={styles.innerWrapper}>
-          <Body1 bold>Uttrykk:</Body1>
+      <div className="py-8 px-page">
+        <div className="mx-auto max-w-page">
+          <p className="text-body-1 bold">Uttrykk:</p>
           {sentences.map(({ node: sentence }) => (
             <p>{sentence.text}</p>
           ))}

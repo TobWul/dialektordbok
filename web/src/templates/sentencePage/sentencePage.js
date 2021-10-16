@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Body1, Heading4 } from "../../components/Typography/Typography";
 import SEO from "../../components/SEO";
 import * as styles from "./sentencePage.module.scss";
 import { blockToPlainText } from "../../lib/helpers";
@@ -29,15 +28,15 @@ const SentencePage = ({
       />
       <div className={styles.sentenceTop}>
         <div className={styles.innerWrapper}>
-          <Heading4>&ldquo;{text}&rdquo;</Heading4>
-          <Body1>{meaning}</Body1>
+          <h1 className="text-heading-4">&ldquo;{text}&rdquo;</h1>
+          <p className="text-body-1">{meaning}</p>
         </div>
       </div>
       <div className={styles.relevantContent}>
         <div className={styles.innerWrapper}>
-          <Body1 bold>Uttrykk:</Body1>
+          <p className="text-body-1 bold">Uttrykk:</p>
           {words.map(({ word }) => (
-            <Body1>{blockToPlainText(word)}</Body1>
+            <p className="text-body-1">{blockToPlainText(word)}</p>
           ))}
         </div>
       </div>

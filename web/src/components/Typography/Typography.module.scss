@@ -25,13 +25,14 @@ h6,
   }
 }
 
-h1,
+.text-heading-1,
 .Heading1 {
   $h1: (
     900: 4.3125rem,
     1400: 5.3125rem,
   );
   @include variable-font-size($h1);
+  @apply .text-7-xl;
 }
 
 h2,
